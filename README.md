@@ -1,4 +1,4 @@
-# BugsBunny: Magento 2 YouTube Video Widget
+# M2Commerce: Magento 2 YouTube Video Widget
 
 This Magento 2 extension adds a fully configurable **YouTube Video Widget** that allows store admins to easily embed YouTube videos anywhere on the storefront using Magento's widget system.
 
@@ -35,20 +35,19 @@ This Magento 2 extension adds a fully configurable **YouTube Video Widget** that
 7. Save and flush the Magento cache.
 
 # ScreenShots
-![1.png](Screenshots/1.png)
-![2.png](Screenshots/2.png)
+![12.png](Screenshots/12.png)
 
 ## 📦 Installation
 
 1. Copy the extension to:
 ```
-app/code/BugsBunny/YoutubeWidget
+app/code/M2Commerce/YoutubeWidget
 ```
 
 2. Run the following commands from your Magento root directory:
 
 ```bash
-php bin/magento module:enable BugsBunny_YoutubeWidget
+php bin/magento module:enable M2Commerce_YoutubeWidget
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento cache:flush

@@ -1,14 +1,14 @@
 <?php
-
 /**
- * @category    BugsBunny Enterprise
- * @package     BugsBunny_OrderComment
- * @copyright   Copyright (c) 2023 BugsBunny Enterprise
+ * @category    M2Commerce Enterprise
+ * @package     M2Commerce_OrderComment
+ * @copyright   Copyright (c) 2025 M2Commerce Enterprise
  * @author      dawoodgondaldev@gmail.com
  */
 
 declare(strict_types=1);
-namespace BugsBunny\YoutubeWidget\Block\Widget;
+
+namespace M2Commerce\YoutubeWidget\Block\Widget;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Widget\Block\BlockInterface;
