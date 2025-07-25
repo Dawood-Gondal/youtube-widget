@@ -57,10 +57,10 @@ class Youtube extends Template implements BlockInterface
     }
 
     /**
-     * @return bool
+     * @return string
      */
     public function isAutoplay()
     {
-        return (bool)$this->getData('autoplay');
+        return $this->getData('autoplay');
     }
 }

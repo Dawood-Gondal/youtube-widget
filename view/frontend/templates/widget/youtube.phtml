@@ -6,27 +6,25 @@
  * @author      dawoodgondaldev@gmail.com
  */
 
-/** @var \Magento\Framework\View\Element\Template $block */
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-/** @var \Magento\Framework\Escaper $escaper */
-$escaper = $objectManager->get(\Magento\Framework\Escaper::class);
+use Magento\Framework\Escaper;
+use M2Commerce\YoutubeWidget\Block\Widget\Youtube;
 
-$videoUrl = $block->getData('video_url');
-$title = $block->getData('title') ?: 'YouTube Video';
-$width = $block->getData('width') ?: '560';
-$height = $block->getData('height') ?: '315';
-$autoplay = $block->getData('autoplay') ?: '0';
+/** @var Youtube $block */
+/** @var Escaper $escaper */
 
-parse_str(parse_url($videoUrl, PHP_URL_QUERY), $urlParams);
-$videoId = $urlParams['v'] ?? null;
+$videoUrl = $block->getVideoId();
+$title = $block->getVideoTitle();
+$width = $block->getWidth();
+$height = $block->getHeight();
+$autoplay = $block->isAutoplay();
 ?>
 
-<?php if ($videoId): ?>
-    <div class="youtube-widget" style="text-align:center; margin:20px 0;">
+<?php if ($videoUrl): ?>
+    <div class="youtube-widget" style="text-align:center;">
         <h2><?= $escaper->escapeHtmlAttr($title) ?></h2>
         <iframe width="<?= $escaper->escapeHtmlAttr($width) ?>"
                 height="<?= $escaper->escapeHtmlAttr($height) ?>"
-                src="https://www.youtube.com/embed/<?= $escaper->escapeHtmlAttr($videoId) ?>?autoplay=<?= $escaper->escapeHtmlAttr($autoplay) ?>"
+                src="https://www.youtube.com/embed/<?= $escaper->escapeHtmlAttr($videoUrl) ?>?autoplay=<?= $escaper->escapeHtmlAttr($autoplay) ?>"
                 title="<?= $escaper->escapeHtmlAttr($title) ?>"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
