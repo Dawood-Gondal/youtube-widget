@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category    BugsBunny Enterprise
+ * @package     BugsBunny_YoutubeWidget
+ * @copyright   Copyright (c) 2023 BugsBunny Enterprise
+ * @author      dawoodgondaldev@gmail.com
+ */
+-->
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget_file.xsd">
+    <widget id="youtube_widget" class="BugsBunny\YoutubeWidget\Block\Widget\Youtube">
+        <label translate="true">YouTube Video Widget</label>
+        <description>Display a YouTube video with configurable URL, title, width, height, and autoplay.</description>
+        <parameters>
+            <parameter name="video_url" xsi:type="text" required="true" sort_order="10" visible="true">
+                <label translate="true">YouTube Video URL</label>
+            </parameter>
+            <parameter name="title" xsi:type="text" sort_order="20" visible="true">
+                <label translate="true">Video Title</label>
+            </parameter>
+            <parameter name="width" xsi:type="text" sort_order="30" visible="true">
+                <label translate="true">Width</label>
+                <value>560</value>
+            </parameter>
+            <parameter name="height" xsi:type="text" sort_order="40" visible="true">
+                <label translate="true">Height</label>
+                <value>315</value>
+            </parameter>
+            <parameter name="autoplay" xsi:type="select" sort_order="50" visible="true">
+                <label translate="true">Autoplay</label>
+                <options>
+                    <option name="no" value="0">
+                        <label translate="true">No</label>
+                    </option>
+                    <option name="yes" value="1">
+                        <label translate="true">Yes</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

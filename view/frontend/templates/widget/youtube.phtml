@@ -1,0 +1,31 @@
+<?php
+/**
+ * @category    BugsBunny Enterprise
+ * @package     BugsBunny_OrderComment
+ * @copyright   Copyright (c) 2023 BugsBunny Enterprise
+ * @author      dawoodgondaldev@gmail.com
+ */
+
+$videoUrl = $block->getData('video_url');
+$title = $block->getData('title') ?: 'YouTube Video';
+$width = $block->getData('width') ?: '560';
+$height = $block->getData('height') ?: '315';
+$autoplay = $block->getData('autoplay') == '1' ? '1' : '0';
+
+parse_str(parse_url($videoUrl, PHP_URL_QUERY), $urlParams);
+$videoId = $urlParams['v'] ?? null;
+?>
+
+<?php if ($videoId): ?>
+    <div class="youtube-widget" style="text-align:center; margin:20px 0;">
+        <h2><?= $block->escapeHtml($title) ?></h2>
+        <iframe width="<?= $block->escapeHtml($width) ?>"
+                height="<?= $block->escapeHtml($height) ?>"
+                src="https://www.youtube.com/embed/<?= $block->escapeHtml($videoId) ?>?autoplay=<?= $autoplay ?>"
+                title="<?= $block->escapeHtml($title) ?>"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+    </div>
+<?php endif; ?>
