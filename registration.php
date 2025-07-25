@@ -1,9 +1,8 @@
 <?php
-
 /**
- * @category    BugsBunny Enterprise
- * @package     BugsBunny_OrderComment
- * @copyright   Copyright (c) 2023 BugsBunny Enterprise
+ * @category    M2Commerce Enterprise
+ * @package     M2Commerce_OrderComment
+ * @copyright   Copyright (c) 2025 M2Commerce Enterprise
  * @author      dawoodgondaldev@gmail.com
  */
 
@@ -11,6 +10,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'BugsBunny_YoutubeWidget',
+    'M2Commerce_YoutubeWidget',
     __DIR__
 );
